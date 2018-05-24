@@ -1,0 +1,1 @@
+package cn.finder.wae.api.sdk.response;import cn.finder.httpcommons.response.ApiResponse;	/***	* ip-主管指派人员响应	*/public class FlowOrderworkerResponse extends ApiResponse{}

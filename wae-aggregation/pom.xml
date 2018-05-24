@@ -1,0 +1,145 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cn.finder.wae</groupId>
+	<artifactId>wae-aggregation</artifactId>
+	<version>1.0.1-RELEASE</version>
+	<packaging>pom</packaging>
+
+
+
+	<modules>
+		<module>../wae-global-core</module>
+		<module>../wae-global-processor</module>
+	
+		<module>../wae-domain-data</module>
+		 <module>../wae-core</module>
+		<module>../wae-service-rest-data</module>
+		<module>../wae-service-rest</module>
+		<module>../wae-wx</module>
+		<module>../wae-web</module> 
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<prj-release-url>http://cnxingkong.cn:8081/nexus/content/repositories/wae-release/</prj-release-url>
+		<prj-snapshots-url>http://cnxingkong.cn:8081/nexus/content/repositories/wae-snapshots/</prj-snapshots-url>
+		
+		<jre-home>D:/Program Files/Java/jre1.8.0_131</jre-home>
+	</properties>
+
+
+	<distributionManagement>
+		<repository>
+			<id>wae-release</id>
+			<name>wae release</name>
+			<url>${prj-release-url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>wae-snapshots</id>
+			<name>wae snapshot</name>
+			<url>${prj-snapshots-url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.4</version>
+					<executions>
+						<!-- <execution>
+							<phase>compile</phase>
+							<goals>
+								<goal>jar</goal>
+								
+								<goal>test-jar</goal>
+								
+							</goals>
+						</execution> -->
+						
+						<execution>
+						<!-- 在多项目构建中，将source-plugin置于顶层或parent的pom中并不会发挥作用，必须置于具体项目的pom中。 -->
+						 	<id>attach-sources</id>
+							<phase>deploy</phase>  <!--要绑定到的生命周期的阶段 在verify之后，install之前执行下面指定的goal -->
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+
+					</executions>
+				</plugin>
+
+
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						
+						 <encoding>${project.build.sourceEncoding}</encoding>  
+				            <compilerArguments>  
+				                  <verbose />  
+				              	<bootclasspath>${jre-home}/lib/rt.jar;${jre-home}/lib/jce.jar</bootclasspath>  
+				        	</compilerArguments>  
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>copy-dependencies</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>copy-dependencies</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${basedir}/src/main/webapp/WEB-INF/lib</outputDirectory>
+								<overWriteReleases>false</overWriteReleases>
+								<overWriteSnapshots>false</overWriteSnapshots>
+								<overWriteIfNewer>true</overWriteIfNewer>
+
+							</configuration>
+						</execution>
+
+
+
+					</executions>
+				</plugin>
+
+
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<configuration>
+						<archive>
+							<manifest>
+								<addClasspath>true</addClasspath>
+								<classpathPrefix>lib/</classpathPrefix>
+								<mainClass>theMainClass</mainClass>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+</project>

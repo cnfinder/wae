@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.finder.wae.wx</groupId>
+  <artifactId>wae-wx-data</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>wae-wx-data</name>
+  <url>http://maven.apache.org</url>
+
+
+
+   <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<prj-snapshots-url>http://cnxingkong.cn:8081/nexus/content/repositories/weixin-snapshot/</prj-snapshots-url>
+	</properties>
+
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>weixin-snapshot</id>
+			<name>weixin-snapshot snapshot</name>
+			<url>${prj-snapshots-url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
+
+  <dependencies>
+    <dependency>
+		<groupId>cn.finder.wx</groupId>
+		  <artifactId>wx-sdk</artifactId>
+		 <version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>cn.finder</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.1</version>
+	</dependency>
+	 <dependency>
+	  		<groupId>cn.finder.wae.cache</groupId>
+		  <artifactId>wae-cache</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+	  </dependency> 
+  </dependencies>
+</project>

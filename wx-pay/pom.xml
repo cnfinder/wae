@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.finder.wx</groupId>
+	<artifactId>wx-pay</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>wx-pay</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<prj-snapshots-url>http://cnxingkong.cn:8081/nexus/content/repositories/wae-snapshots/</prj-snapshots-url>
+	</properties>
+
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>wae-snapshots</id>
+			<name>wae snapshots</name>
+			<url>${prj-snapshots-url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+
+			<groupId>cn.finder.wx</groupId>
+			<artifactId>wx-sdk</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.finder</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>cn.finder</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.finder</groupId>
+			<artifactId>xstream-benchmark</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+	</dependencies>
+</project>

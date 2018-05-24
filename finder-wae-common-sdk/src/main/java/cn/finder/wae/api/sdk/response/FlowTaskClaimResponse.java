@@ -1,0 +1,1 @@
+package cn.finder.wae.api.sdk.response;import cn.finder.httpcommons.response.ApiResponse;	/***	* 流程任务签收响应	*/public class FlowTaskClaimResponse extends ApiResponse{}

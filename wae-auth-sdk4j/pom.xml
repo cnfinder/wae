@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.finder.wae.api.sdk</groupId>
+  <artifactId>wae-auth-sdk4j</artifactId>
+  <version>1.0.0-RELEASE</version>
+  <packaging>jar</packaging>
+
+  <name>wae-auth-sdk4j</name>
+  <url>http://maven.apache.org</url>
+
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<prj-release-url>http://cnxingkong.cn:8081/nexus/content/repositories/wae-release/</prj-release-url>
+	</properties>
+
+
+	<distributionManagement>
+		<repository>
+			<id>wae-release</id>
+			<name>wae release</name>
+			<url>${prj-release-url}</url>
+		</repository>
+	</distributionManagement>
+
+
+  <dependencies>
+  
+ 	<dependency>
+		<groupId>cn.finder</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.11</version>
+		<scope>test</scope>
+	</dependency>
+	
+	
+	
+	<dependency>
+		<groupId>cn.finder.wae.httpcommons</groupId>
+		 <artifactId>wae-http-commons</artifactId>
+	   <version>0.0.1-RELEASE</version>
+	 
+	</dependency>
+	
+	
+	
+  </dependencies>
+</project>

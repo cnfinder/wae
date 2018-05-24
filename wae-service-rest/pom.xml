@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+		<groupId>cn.finder.wae</groupId>
+		<artifactId>wae-aggregation</artifactId>
+		<version>1.0.1-RELEASE</version>
+		<relativePath>../wae-aggregation/pom.xml</relativePath>
+	</parent>
+  
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>wae-service-rest</artifactId>
+  <packaging>jar</packaging>
+
+	
+
+  <name>wae-service-rest</name>
+  <url>http://maven.apache.org</url>
+
+	
+
+	
+
+  <dependencies>
+ 	<dependency>
+ 		<groupId>${project.groupId}</groupId>
+ 		<artifactId>wae-core</artifactId>
+ 		<version>2.0.1-RELEASE</version>
+ 	</dependency>
+   
+   <dependency>
+ 		<groupId>${project.groupId}</groupId>
+ 		<artifactId>wae-service-rest-data</artifactId>
+ 		<version>${project.version}</version>
+ 	</dependency>
+ 	
+ 	<dependency>
+		<groupId>cn.finder.wae.cache</groupId>
+		<artifactId>wae-cache</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency> 
+ 	
+  </dependencies>
+</project>

@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>wae-wx</artifactId>
+  <version>0.0.1-RELEASE</version>
+  <packaging>jar</packaging>
+
+  
+  <parent>
+	<groupId>cn.finder.wae</groupId>
+	<artifactId>wae-aggregation</artifactId>
+	<version>1.0.1-RELEASE</version>
+	<relativePath>../wae-aggregation/pom.xml</relativePath>
+</parent>
+	
+  <name>wae-wx</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  	<dependency>
+		<groupId>cn.finder.wae</groupId>
+		<artifactId>wae-core</artifactId>
+		<version>2.0.1-RELEASE</version>
+	</dependency>
+		
+	
+	<dependency>
+		<groupId>cn.finder</groupId>
+		  <artifactId>finder-http-commons</artifactId>
+		 <version>0.0.1-RELEASE</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>cn.finder.wx</groupId>
+		  <artifactId>wx-sdk</artifactId>
+		 <version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>cn.finder.wae.wx</groupId>
+		  <artifactId>wae-wx-data</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+	<dependency>
+		<groupId>cn.cnxingkong.stc</groupId>
+	  <artifactId>stc-token-sdk</artifactId>
+	  <version>0.0.1-RELEASE</version>
+	 
+	</dependency>
+		
+  </dependencies>
+</project>
